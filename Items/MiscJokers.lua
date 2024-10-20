@@ -4265,7 +4265,7 @@ local night = {
 	object_type = "Joker",
 	name = "cry-night",
 	key = "night",
-	config = { extra = { mult = 3 } },
+	config = { extra = { mult = 1.5 } },
 	pos = { x = 3, y = 1 },
 	rarity = 3,
 	cost = 6,
@@ -4333,7 +4333,7 @@ local busdriver = {
 	object_type = "Joker",
 	name = "cry-busdriver",
 	key = "busdriver",
-	config = { extra = { mult = 50, odds = 4 } },
+	config = { extra = { mult = 20, odds = 4 } },
 	pos = { x = 5, y = 1 },
 	immune_to_chemach = true,
 	rarity = 2,
@@ -4450,7 +4450,7 @@ local membershipcard = {
 	object_type = "Joker",
 	name = "cry-membershipcard",
 	key = "membershipcard",
-	config = { extra = { Xmult_mod = 0.1 } },
+	config = { extra = { Xmult_mod = 0.01 } },
 	pos = { x = 6, y = 2 },
 	soul_pos = { x = 6, y = 1 },
 	rarity = 4,
@@ -5040,23 +5040,25 @@ local sync_catalyst = {
 	calculate = function(self, card, context)
 		if context.cardarea == G.jokers and not context.before and not context.after then
 			local tot = hand_chips + mult
-			if not tot.array or #tot.array < 2 or tot.array[2] < 2 then --below eXeY notation
-				hand_chips = mod_chips(math.floor(tot / 2))
-				mult = mod_mult(math.floor(tot / 2))
-			else
-				if hand_chips > mult then
-					tot = hand_chips
+			if not context.debuffed_hand then -- Adding Guard clause to protect against unallowed hands
+				if not tot.array or #tot.array < 2 or tot.array[2] < 2 then --below eXeY notation
+					hand_chips = mod_chips(math.floor(tot / 2))
+					mult = mod_mult(math.floor(tot / 2))
 				else
-					tot = mult
+					if hand_chips > mult then
+						tot = hand_chips
+					else
+						tot = mult
+					end
+					hand_chips = mod_chips(tot)
+					mult = mod_chips(tot)
 				end
-				hand_chips = mod_chips(tot)
-				mult = mod_chips(tot)
+				update_hand_text({ delay = 0 }, { mult = mult, chips = hand_chips })
+				return {
+					message = localize("k_balanced"),
+					colour = { 0.8, 0.45, 0.85, 1 },
+				}
 			end
-			update_hand_text({ delay = 0 }, { mult = mult, chips = hand_chips })
-			return {
-				message = localize("k_balanced"),
-				colour = { 0.8, 0.45, 0.85, 1 },
-			}
 		end
 	end,
 }
