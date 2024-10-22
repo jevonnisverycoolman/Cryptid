@@ -70,7 +70,7 @@ local googol_play = {
 	object_type = "Joker",
 	name = "cry-Googol Play Card",
 	key = "googol_play",
-	config = { extra = { Xmult = 1e100, odds = 8 } },
+	config = { extra = { Xmult = 12, odds = 8 } },
 	pos = { x = 3, y = 0 },
 	immune_to_chemach = true,
 	rarity = "cry_epic",
