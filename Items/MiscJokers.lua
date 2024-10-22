@@ -4612,23 +4612,27 @@ local oldinvisible = {
 					end
 				end
 				if #eligibleJokers > 0 then
-					G.E_MANAGER:add_event(Event({
-						func = function()
-							local card = copy_card(pseudorandom_element(eligibleJokers, pseudoseed("cry_oldinvis")), nil)
-							card:add_to_deck()
-							G.jokers:emplace(card)
-							return true
-						end,
-					}))
-					card_eval_status_text(
-						context.blueprint_card or card,
-						"extra",
-						nil,
-						nil,
-						nil,
-						{ message = localize("k_duplicated_ex") }
-					)
-					return nil, true
+					if #G.jokers.cards <= G.jokers.config.card_limit then
+						G.E_MANAGER:add_event(Event({
+							func = function()
+								local card = copy_card(pseudorandom_element(eligibleJokers, pseudoseed("cry_oldinvis")), nil)
+								card:add_to_deck()
+								G.jokers:emplace(card)
+								return true
+							end,
+						}))
+						card_eval_status_text(
+							context.blueprint_card or card,
+							"extra",
+							nil,
+							nil,
+							nil,
+							{ message = localize("k_duplicated_ex") }
+						)
+						return nil, true
+					else
+						card_eval_status_text(card, "extra", nil, nil, nil, { message = localize("k_no_room_ex") })
+					end
 				else
                     			card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_no_other_jokers')})
                 		end
