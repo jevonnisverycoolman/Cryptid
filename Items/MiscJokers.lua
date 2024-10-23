@@ -5073,7 +5073,7 @@ local membershipcardtwo = {
 	key = "membershipcardtwo",
 	config = { extra = { chips = 1 } },
 	pos = { x = 5, y = 4 },
-	rarity = "cry_epic",
+	rarity = 4,
 	cost = 17,
 	order = 50,
 	blueprint_compat = true,
