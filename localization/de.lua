@@ -1232,6 +1232,12 @@ return {
             },
             j_cry_membershipcardtwo = {
                 name = "Alte Mitgliedskarte", --Could probably have a diff Name imo
+                --[[    outdated, new description:
+                "{C:chips}+#1#{} Chips for every 3 members",
+                    "in the {C:attention}Cryptid Discord{}",
+                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
+                    "{C:blue,s:0.7}https://discord.gg/eUf9Ur6RyB{}",
+                ]]
                 text = {
                     "{C:chips}+#1#{} Chips für jedes Mitglied",
                     "im {C:attention}Cryptid Discord{}",

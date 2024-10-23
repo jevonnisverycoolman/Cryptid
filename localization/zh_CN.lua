@@ -1474,6 +1474,12 @@ return {
             },
             j_cry_membershipcardtwo = {
                 name = "老旧会员卡",
+                --[[    outdated, new description:
+                "{C:chips}+#1#{} Chips for every 3 members",
+                    "in the {C:attention}Cryptid Discord{}",
+                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
+                    "{C:blue,s:0.7}https://discord.gg/eUf9Ur6RyB{}",
+                ]]
                 text = {
                     "在{C:attention}Cryptid Discord{}中的每个成员",
                     "提供{C:chips}+#1#{} Chips",

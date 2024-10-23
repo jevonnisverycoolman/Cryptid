@@ -34,38 +34,6 @@ local supercell = {
 		end
 	end,
 }
-local membershipcardtwo = {
-	object_type = "Joker",
-	name = "cry-membershipcardtwo",
-	key = "membershipcardtwo",
-	config = { extra = { chips = 1 } },
-	pos = { x = 5, y = 4 },
-	rarity = "cry_epic",
-	cost = 17,
-	order = 50,
-	blueprint_compat = true,
-	atlas = "atlasepic",
-	loc_vars = function(self, info_queue, card)
-		return { vars = { card.ability.extra.chips, card.ability.extra.chips * GLOBAL_cry_member_count } }
-	end,
-	calculate = function(self, card, context)
-		if
-			context.cardarea == G.jokers
-			and not context.before
-			and not context.after
-			and card.ability.extra.chips > 0
-		then
-			return {
-				message = localize({
-					type = "variable",
-					key = "a_chips",
-					vars = { card.ability.extra.chips * GLOBAL_cry_member_count },
-				}),
-				chip_mod = card.ability.extra.chips * GLOBAL_cry_member_count,
-			}
-		end
-	end,
-}
 local googol_play = {
 	object_type = "Joker",
 	name = "cry-Googol Play Card",
@@ -1133,7 +1101,6 @@ return {
 	end,
 	items = {
 		supercell,
-		membershipcardtwo,
 		googol_play,
 		negative,
 		canvas,
