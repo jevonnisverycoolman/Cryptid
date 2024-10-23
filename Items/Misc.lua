@@ -327,7 +327,7 @@ local glitched = {
 			cry_misprintize(card, nil, true)
 			cry_misprintize(card, {
 				min = 0.1 * (G.GAME.modifiers.cry_misprint_min or 1),
-				max = 10 * (G.GAME.modifiers.cry_misprint_max or 1),
+				max = 3 * (G.GAME.modifiers.cry_misprint_max or 1),
 			})
 		end)
 		if card.config.center.apply_glitched then
