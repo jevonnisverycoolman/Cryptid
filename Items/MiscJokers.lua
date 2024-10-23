@@ -4450,7 +4450,7 @@ local membershipcard = {
 	object_type = "Joker",
 	name = "cry-membershipcard",
 	key = "membershipcard",
-	config = { extra = { Xmult_mod = 0.01 } },
+	config = { extra = { Xmult_mod = 0.005 } },
 	pos = { x = 6, y = 2 },
 	soul_pos = { x = 6, y = 1 },
 	rarity = 4,
