@@ -1255,7 +1255,7 @@ local lightupthenight = {
 	pos = { x = 1, y = 1 },
 	atlas = "atlasone",
 	rarity = 3,
-	cost = 7,
+	cost = 9,
 	order = 67,
 	blueprint_compat = true,
 	loc_vars = function(self, info_queue, center)
@@ -1470,7 +1470,7 @@ local apjoker = {
 	pos = { x = 2, y = 0 },
 	config = { extra = { x_mult = 4 } },
 	rarity = 2,
-	cost = 6,
+	cost = 8,
 	order = 37,
 	blueprint_compat = true,
 	perishable_compat = false,
