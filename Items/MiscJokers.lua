@@ -4690,7 +4690,7 @@ local kidnap = {
 		crazy = { t_mult = 12, type = "Straight" },
 		droll = { t_mult = 10, type = "Flush" },
 	},
-	rarity = 2,
+	rarity = 3,
 	cost = 6,
 	blueprint_compat = false,
 	loc_vars = function(self, info_queue, center)
