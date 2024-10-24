@@ -12,6 +12,7 @@ local epic_tag = {
 	pos = { x = 3, y = 0 },
 	name = "cry-Epic Tag",
 	order = 1,
+	min_ante = 3,
 	requires = 'j_cry_googol_play',
 	config = { type = "store_joker_create" },
 	key = "epic",
@@ -49,6 +50,7 @@ local schematic = {
 	pos = { x = 1, y = 2 },
 	name = "cry-Schematic Tag",
 	order = 24,
+	min_ante = 4,
 	requires = 'j_brainstorm',
 	config = { type = "store_joker_create" },
 	key = "schematic",
@@ -168,8 +170,8 @@ local gambler = {
 	order = 13,
 	atlas = "tag_cry",
 	pos = { x = 2, y = 0 },
-	config = { type = "immediate", odds = 4 },
-	min_ante = 2,
+	config = { type = "immediate", odds = 5 },
+	min_ante = 5,
 	key = "gambler",
 	loc_vars = function(self, info_queue)
 		info_queue[#info_queue + 1] = { set = "Tag", key = "tag_cry_empowered" }
@@ -211,7 +213,7 @@ local bundle = {
 	pos = { x = 0, y = 0 },
 	config = { type = "immediate" },
 	key = "bundle",
-	min_ante = 2,
+	min_ante = 6,
 	loc_vars = function(self, info_queue)
 		info_queue[#info_queue + 1] = { set = "Tag", key = "tag_standard" }
 		info_queue[#info_queue + 1] = { set = "Tag", key = "tag_charm" }
@@ -703,7 +705,7 @@ local loss = {
 	order = 25,
 	config = { type = "new_blind_choice" },
 	key = "loss",
-	min_ante = 2,
+	min_ante = 6,
 	loc_vars = function(self, info_queue)
 		info_queue[#info_queue + 1] = { set = "Other", key = "p_cry_meme_1", specific_vars = { 2, 5 } }
 		return { vars = {} }
@@ -734,6 +736,7 @@ local gourmand = {
 	pos = { x = 2, y = 3 },
 	name = "cry-Gourmand Tag",
 	order = 17,
+	min_ante = 2,
 	config = { type = "store_joker_create" },
 	key = "gourmand",
 	loc_vars = function(self, info_queue)
@@ -776,7 +779,7 @@ local better_top_up = {
 	loc_vars = function(self, info_queue)
 		return { vars = {self.config.spawn_jokers} }
 	end,
-        min_ante = 5,
+        min_ante = 6,
         apply = function(tag, context)
                 if context.type == "immediate" then
 			if G.jokers and #G.jokers.cards < G.jokers.config.card_limit then
