@@ -2055,7 +2055,7 @@ return {
                 text = {
                     "{C:attention}Entferne{} alle Handlevel,",
                     "verbessere {C:legendary,E:1}meistgespielte{} Pokerhand",
-                    "um {C:attention}3{} für jedes entfernte Level",
+                    "um {C:attention}1{} für jedes entfernte Level",
                 },
             },
         },

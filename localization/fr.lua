@@ -2082,7 +2082,7 @@ return {
                 text = {
                     "{C:attention}Remove{} all hand levels,",
                     "upgrade {C:legendary,E:1}most played{} poker hand",
-                    "by {C:attention}3{} for each removed level",
+                    "by {C:attention}1{} for each removed level",
                 },
             },
         },

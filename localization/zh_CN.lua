@@ -2468,8 +2468,8 @@ return {
                 name = "白洞",
                 text = {
                     "{C:attention}移除{} 所有手牌等级，",
-                    "升级 {C:legendary,E:1}最常用{} 扑克牌型",
-                    "每移除1级，最常用牌型升{C:attention}3{}级"
+                    "将 {C:legendary,E:1}最常用{} 扑克手牌升级",
+                    "每移除一个等级，升级 {C:attention}1{}"
                 }
             }
         },

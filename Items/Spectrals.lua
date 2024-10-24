@@ -46,7 +46,7 @@ local white_hole = {
 				level = G.GAME.hands[_hand].level,
 			}
 		)
-		level_up_hand(used_consumable, _hand, false, 3 * removed_levels)
+		level_up_hand(used_consumable, _hand, false, 1 * removed_levels)
 		update_hand_text(
 			{ sound = "button", volume = 0.7, pitch = 1.1, delay = 0 },
 			{ mult = 0, chips = 0, handname = "", level = "" }
