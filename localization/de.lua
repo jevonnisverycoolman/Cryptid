@@ -1276,7 +1276,7 @@ return {
                 text = {
                     "Wenn {C:attention}Blind{} ausgewählt wird,",
                     "wird der linke Joker zerstört",
-                    "und {C:attention}10 mal{} der Verkaufswert",
+                    "und {C:attention}6 mal{} der Verkaufswert",
                     "zu den {C:chips}Chips{} hinzugefügt",
                     "{C:inactive}(Momentan {C:chips}+#1#{C:inactive} Chips)",
                 },

@@ -1287,7 +1287,7 @@ return {
                 text = {
                     "When {C:attention}Blind{} is selected,",
                     "destroy Joker to the left",
-                    "and permanently add {C:attention}ten times{}",
+                    "and permanently add {C:attention}six times{}",
                     "its sell value to this {C:chips}Chips{}",
                     "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
                 },

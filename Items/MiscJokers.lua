@@ -1664,8 +1664,8 @@ local monkey_dagger = {
 	key = "monkey_dagger",
 	pos = { x = 4, y = 3 },
 	config = { extra = { chips = 0 } },
-	rarity = 3,
-	cost = 7,
+	rarity = 2,
+	cost = 6,
 	order = 49,
 	perishable_compat = false,
 	blueprint_compat = true,
@@ -1709,7 +1709,7 @@ local monkey_dagger = {
 			G.E_MANAGER:add_event(Event({
 				func = function()
 					G.GAME.joker_buffer = 0
-					card.ability.extra.chips = card.ability.extra.chips + sliced_card.sell_cost * 10
+					card.ability.extra.chips = card.ability.extra.chips + sliced_card.sell_cost * 6
 					card:juice_up(0.8, 0.8)
 					sliced_card:start_dissolve({ HEX("57ecab") }, nil, 1.6)
 					play_sound("slice1", 0.96 + math.random() * 0.08)
@@ -1726,7 +1726,7 @@ local monkey_dagger = {
 					message = localize({
 						type = "variable",
 						key = "a_chips",
-						vars = { card.ability.extra.chips + 10 * sliced_card.sell_cost },
+						vars = { card.ability.extra.chips + 6 * sliced_card.sell_cost },
 					}),
 					colour = G.C.CHIPS,
 					no_juice = true,

@@ -1301,7 +1301,7 @@ return {
                 text = {
                     "Lorsque la {C:attention}Blinde{} est sélectionnée,",
                     "détruit le Joker situé à sa gauche",
-                    "et augmente ces {C:mult}Jetons{} de {C:attention}dix fois{}",
+                    "et augmente ces {C:mult}Jetons{} de {C:attention}six fois{}",
                     "la valeur de vente du Joker détruit",
                     "{C:inactive}(Actuellement {C:chips}+#1#{C:inactive} Jetons)",
                 },

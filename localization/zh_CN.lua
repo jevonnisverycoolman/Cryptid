@@ -1515,7 +1515,7 @@ return {
                 text = {
                     "当选择{C:attention}盲注{}时，",
                     "摧毁左边的小丑",
-                    "并永久增加其售价的{C:attention}十倍{}",
+                    "并永久增加其售价的{C:attention}六次{}",
                     "到这张{C:chips}筹码{}",
                     "{C:inactive}(当前{C:chips}+#1#{C:inactive} 筹码)"
                 }
