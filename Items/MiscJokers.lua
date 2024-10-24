@@ -4517,7 +4517,7 @@ local cryptidmoment = {
 		return { vars = { math.max(1, math.floor(center.ability.extra.money)) } }
 	end,
 	rarity = 1,
-	cost = 4,
+	cost = 5,
 	order = 65,
 	eternal_compat = false,
 	atlas = "atlasthree",
@@ -4658,7 +4658,7 @@ local fractal = {
 	name = "cry-FractalFingers",
 	key = "fractal",
 	pos = { x = 6, y = 4 },
-	config = { extra = 2 },
+	config = { extra = 1 },
 	rarity = 3,
 	cost = 7,
 	order = 76,
