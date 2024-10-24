@@ -1119,7 +1119,7 @@ local wario = {
 	order = 88,
 	pos = { x = 2, y = 3 },
 	soul_pos = { x = 3, y = 3 },
-	config = { extra = { money = 3 } },
+	config = { extra = { money = 1 } },
 	loc_vars = function(self, info_queue, center)
 		return { vars = { center.ability.extra.money } }
 	end,
