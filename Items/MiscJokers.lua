@@ -571,7 +571,7 @@ local chili_pepper = {
 	object_type = "Joker",
 	name = "cry-Chili Pepper",
 	key = "chili_pepper",
-	config = { extra = { Xmult = 1, Xmult_mod = 0.5, rounds_remaining = 6 } },
+	config = { extra = { Xmult = 1, Xmult_mod = 0.5, rounds_remaining = 5 } },
 	pos = { x = 0, y = 1 },
 	rarity = 2,
 	cost = 6,
@@ -645,11 +645,12 @@ local compound_interest = {
 	object_type = "Joker",
 	name = "cry-Compound Interest",
 	key = "compound_interest",
-	config = { extra = { percent_mod = 3, percent = 12 } },
+	config = { extra = { percent_mod = 3, percent = 8 } },
 	pos = { x = 3, y = 2 },
 	rarity = 3,
 	order = 9,
 	cost = 10,
+	immune_to_chemach = true,
 	perishable_compat = false,
 	atlas = "atlastwo",
 	loc_vars = function(self, info_queue, center)
@@ -657,9 +658,6 @@ local compound_interest = {
 	end,
 	calc_dollar_bonus = function(self, card)
 		local bonus = math.max(0, math.floor(0.01 * card.ability.extra.percent * (G.GAME.dollars or 1)))
-		local old = card.ability.extra.percent
-		card.ability.extra.percent = card.ability.extra.percent + card.ability.extra.percent_mod
-		compound_interest_scale_mod(card, card.ability.extra.percent_mod, old, card.ability.extra.percent)
 		if bonus > 0 then
 			return bonus
 		end
