@@ -731,7 +731,7 @@ return {
                 name = "Compound Interest",
                 text = {
                     "Earn {C:money}#1#%{} of total money",
-                    "at end of round,",
+                    "at end of round",
                 },
             },
             j_cry_copypaste = {

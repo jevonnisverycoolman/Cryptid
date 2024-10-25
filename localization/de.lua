@@ -721,7 +721,7 @@ return {
                 name = "Zinseszins",
                 text = {
                     "Bekomme {C:money}#1#%{} deines gesammten Geldes",
-                    "am ende der Runde,",
+                    "am ende der Runde",
                 },
             },
             j_cry_copypaste = {

@@ -1026,7 +1026,7 @@ return {
             j_cry_compound_interest = {
                 name = "利滚利",
                 text = {
-                    "回合结束时，获得{C:money}#1#%{}利息",
+                    "回合结束时, 获得{C:money}#1#%{}利息",
                 }
             },
             j_cry_copypaste = {

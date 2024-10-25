@@ -747,7 +747,7 @@ return {
                 name = "Cumul d'intérêts",
                 text = {
                     "Gagne {C:money}#1#%{} de votre argent total",
-                    "à la fin de la manche,",
+                    "à la fin de la manche",
                 },
             },
             j_cry_copypaste = {
