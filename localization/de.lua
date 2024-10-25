@@ -722,8 +722,6 @@ return {
                 text = {
                     "Bekomme {C:money}#1#%{} deines gesammten Geldes",
                     "am ende der Runde,",
-                    "erhöht sich um {C:money}#2#%{} für jede",
-                    "aufeinenderfolgende Auszahlung",
                 },
             },
             j_cry_copypaste = {

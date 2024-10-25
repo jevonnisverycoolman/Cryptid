@@ -1027,7 +1027,6 @@ return {
                 name = "利滚利",
                 text = {
                     "回合结束时，获得{C:money}#1#%{}利息",
-                    "每次触发后，利息获取增加{C:money}#2#%{}"
                 }
             },
             j_cry_copypaste = {

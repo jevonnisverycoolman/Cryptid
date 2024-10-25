@@ -748,8 +748,6 @@ return {
                 text = {
                     "Gagne {C:money}#1#%{} de votre argent total",
                     "à la fin de la manche,",
-                    "augmente de {C:money}#2#%{} après",
-                    "chaque paiement",
                 },
             },
             j_cry_copypaste = {
