@@ -209,7 +209,7 @@ local m = {
 	name = "cry-m",
 	key = "m",
 	pos = { x = 3, y = 1 },
-	config = { extra = { extra = 13, x_mult = 1 }, jolly = { t_mult = 8, type = "Pair" } },
+	config = { extra = { extra = 2, x_mult = 1 }, jolly = { t_mult = 8, type = "Pair" } },
 	rarity = "cry_epic",
 	order = 1,
 	cost = 13,
