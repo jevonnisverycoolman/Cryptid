@@ -645,7 +645,7 @@ local compound_interest = {
 	object_type = "Joker",
 	name = "cry-Compound Interest",
 	key = "compound_interest",
-	config = { extra = { percent_mod = 3, percent = 8 } },
+	config = { extra = { percent_mod = 3, percent = 10 } },
 	pos = { x = 3, y = 2 },
 	rarity = 3,
 	order = 9,
