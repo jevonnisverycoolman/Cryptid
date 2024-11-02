@@ -63,25 +63,6 @@ position = "at"
 payload = "if not initial and G.GAME and G.GAME.blind then G.GAME.blind:debuff_card(self) end"
 match_indent = true
 
-# Display Epic/Exotic name in rarity
-[[patches]]
-[patches.pattern]
-target = "functions/UI_definitions.lua"
-pattern = "if AUT.card_type == 'Joker' or (AUT.badges and AUT.badges.force_rarity) then card_type = ({localize('k_common'), localize('k_uncommon'), localize('k_rare'), localize('k_legendary')})[card.config.center.rarity] end"
-position = "at"
-payload = "if AUT.card_type == 'Joker' or (AUT.badges and AUT.badges.force_rarity) then card_type = ({localize('k_common'), localize('k_uncommon'), localize('k_rare'), localize('k_legendary'), ['cry_epic'] = localize('cry_epic'), ['cry_exotic'] = localize('cry_exotic')})[card.config.center.rarity] end"
-match_indent = true
-
-# Fix Rare Tag creating Epic jokers
-[[patches]]
-[patches.pattern]
-target = "tag.lua"
-pattern = "card = create_card('Joker', _context.area, nil, 1, nil, nil, nil, 'rta')"
-position = "at"
-payload = "card = create_card('Joker', _context.area, nil, 0.99, nil, nil, nil, 'rta')"
-match_indent = true
-
-
 # Draw midground layer
 [[patches]]
 [patches.pattern]
@@ -300,8 +281,12 @@ match_indent = true
 [patches.pattern]
 target = "functions/UI_definitions.lua"
 pattern = "if G.GAME.used_vouchers[v.key] then"
-position = "at"
+position = "after"
 payload = '''
+    if not G.GAME.cry_owned_vouchers[v.key] then
+        G.GAME.cry_owned_vouchers[v.key] = G.GAME.used_vouchers[v.key]
+    end
+end
 if G.GAME.cry_owned_vouchers[v.key] then
 '''
 match_indent = true
@@ -697,5 +682,22 @@ Cryptid.aliases = {}
 Cryptid.food = {}
 Cryptid.M_jokers = {} 
 Cryptid.Megavouchers = {}
+'''
+match_indent = true
+
+# Adds cry_creating_card event
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''
+    check_for_unlock({type = 'have_edition'})
+end
+'''
+position = "after"
+payload = '''
+for i = 1, #G.jokers.cards do
+    G.jokers.cards[i]:calculate_joker({cry_creating_card = true, card = card})
+end
+}))
 '''
 match_indent = true

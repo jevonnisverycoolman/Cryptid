@@ -992,35 +992,36 @@ local duplicare = {
     object_type = "Joker",
     name = "cry-duplicare",
     key = "duplicare",
-    config = {extra = {Emult = 1.25}},
-	pos = { x = 0, y = 1 },
-	soul_pos = { x = 1, y = 1, extra = { x = 2, y = 1 } },
+    config = {extra = {Xmult = 1, Xmult_mod = 1}},
+	pos = { x = 0, y = 6 },
+	soul_pos = { x = 2, y = 6, extra = { x = 1, y = 6 } },
     rarity = "cry_exotic",
     cost = 50,
     order = 517,
     blueprint_compat = true,
-    atlas = "placeholders",
+    atlas = "atlasexotic",
     loc_vars = function(self, info_queue, center)
         return {
-            vars = {center.ability.extra.Emult}
+            vars = {center.ability.extra.Xmult, center.ability.extra.Xmult_mod}
         }
     end,
     calculate = function(self, card, context)
-        if context.other_joker and context.other_joker.ability.set == "Joker" then
-            if not Talisman.config_file.disable_anims then 
-                G.E_MANAGER:add_event(Event({
-                    func = function()
-                        context.other_joker:juice_up(0.5, 0.5)
-                        return true
-                    end
-                })) 
-            end
-            return {
-                message = localize{type='variable',key='a_powmult',vars={number_format(card.ability.extra.Emult)}},
-                Emult_mod = card.ability.extra.Emult,
-                colour = G.C.DARK_EDITION
-            }
-        end
+        if not context.blueprint and ((context.post_trigger and context.other_joker ~= card) or (context.individual and context.cardarea == G.play)) then
+			card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_mod
+			card_eval_status_text(card, "extra", nil, nil, nil, { message = localize("k_upgrade_ex") })
+		end
+		if
+			context.cardarea == G.jokers
+			and (to_big(card.ability.extra.Xmult) > to_big(1))
+			and not context.before
+			and not context.after
+		then
+			return {
+				message = localize{type='variable',key='a_xmult',vars={number_format(card.ability.extra.Xmult)}},
+				Xmult_mod = card.ability.extra.Xmult,
+				colour = G.C.MULT,
+			}
+		end
     end
 }
 
@@ -1081,6 +1082,65 @@ local rescribere = {
             end
         end
     end
+}
+
+local formidiulosus = {
+	object_type = "Joker",
+	name = "cry-Formidiulosus",
+	key = "formidiulosus",
+	pos = { x = 6, y = 4 },
+	soul_pos = { x = 8, y = 4, extra = { x = 7, y = 4 } },
+	blueprint_compat = true,
+	config = { extra = { candy = 3, Emult_mod = 0.01, Emult = 1 } },
+	loc_vars = function(self, info_queue, center)
+		return {
+			vars = { center.ability.extra.candy, center.ability.extra.Emult_mod, center.ability.extra.Emult },
+		}
+	end,
+	rarity = "cry_exotic",
+	cost = 50,
+	order = 518,
+	atlas = "atlasexotic",
+	calculate = function(self, card, context)
+		if (context.buying_card or context.cry_creating_card) and context.card.ability.set == "Joker" and context.card.config.center.rarity == "cry_cursed" and not context.blueprint and not (context.card == card) then
+			G.E_MANAGER:add_event(Event({
+				func = function()
+					context.card:start_dissolve()
+					card_eval_status_text(card, 'extra', nil, nil, nil, {
+						message = localize("k_nope_ex"),
+						colour = G.C.BLACK,
+					})
+					return true
+				end
+			}))
+		end
+		if context.ending_shop then
+			for i = 1, card.ability.extra.candy do
+				local card = create_card("Joker", G.jokers, nil, "cry_candy", nil, nil, nil, "cry_trick_candy")
+				card:set_edition({ negative = true }, true)
+				card:add_to_deck()
+				G.jokers:emplace(card)
+			end
+		end
+		card.ability.extra.Emult = 1
+		for i = 1, #G.jokers.cards do
+			if G.jokers.cards[i].config.center.rarity == "cry_candy" then
+				card.ability.extra.Emult = card.ability.extra.Emult + card.ability.extra.Emult_mod
+			end
+		end
+		if
+			context.cardarea == G.jokers
+			and (to_big(card.ability.extra.Emult) > to_big(1))
+			and not context.before
+			and not context.after
+		then
+			return {
+				message = localize{type='variable',key='a_powmult',vars={number_format(card.ability.extra.Emult)}},
+				Emult_mod = card.ability.extra.Emult,
+				colour = G.C.DARK_EDITION,
+			}
+		end
+	end,
 }
 
 return {
@@ -1234,5 +1294,6 @@ return {
 		verisimile,
 		--rescribere, [NEEDS REFACTOR]
 		duplicare,
+		formidiulosus,
 	},
 }

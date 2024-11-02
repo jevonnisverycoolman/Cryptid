@@ -431,6 +431,7 @@ local bonk = {
 	order = 256,
 	pos = { x = 2, y = 2 },
 	config = { extra = { chips = 6, bonus = 1, xchips = 3, type = "Pair" }, jolly = { t_mult = 8, type = "Pair" } },
+    pools = {["Meme"] = true},
 	loc_vars = function(self, info_queue, center)
 		info_queue[#info_queue + 1] = {
 			set = "Joker",
@@ -672,6 +673,7 @@ local reverse = {
 	key = "reverse",
 	effect = "M Joker",
 	config = { extra = { type = "Pair", spawn = 0 }, jolly = { t_mult = 8, type = "Pair" } },
+    pools = {["Meme"] = true},
 	pos = { x = 0, y = 0 },
 	rarity = 2,
 	order = 260,
@@ -824,7 +826,7 @@ local virgo = {
 			card.ability.extra_value = card.ability.extra_value + card.ability.extra.bonus --this doesn't seem to work with retrigger jokers. Intentional?
 			card:set_cost()
 			card_eval_status_text(card, "extra", nil, nil, nil, {
-				message = localize("k_upgrade_ex"),
+				message = localize("k_val_up"),
 				colour = G.C.MONEY,
 			})
 		end

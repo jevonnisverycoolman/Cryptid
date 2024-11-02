@@ -99,6 +99,14 @@ return {
                     "gain its {C:attention}extra tiers",
                 },
             },
+            b_cry_spooky = {
+                name = "Spooky Deck",
+                text = {
+                    "Start with an {C:eternal}Eternal{} {C:attention,T:j_cry_chocolate_dice}Chocolate Die",
+                    "After each {C:attention}Ante{}, create a",
+                    "{C:cry_candy}Candy{} or {X:cry_cursed,C:white}Cursed{} Joker",
+                }
+            },
             b_cry_very_fair = {
                 name = "Very Fair Deck",
                 text = {
@@ -120,7 +128,7 @@ return {
             b_cry_legendary = {
                 name = "Legendary Deck",
                 text = {
-                    "Start with an {C:legendary}Legendary{C:legendary} Joker",
+                    "Start with a {C:legendary}Legendary{C:legendary} Joker",
                     "{C:green}1 in 5{} chance to create another",
 					"when Boss Blind is defeated {C:inactive}(must have room){}",
                 },
@@ -592,6 +600,15 @@ return {
                     "{C:inactive,s:0.8}not fat, just big boned.",
                 },
             },
+            j_cry_blacklist = {
+                name = "Blacklist",
+                text = {
+                    "If a {C:attention}#1#{} is held in hand or played,",
+                    "set {C:chips}Chips{} and {C:mult}Mult{} to 0",
+                    "{C:red,E:2}self destructs{} if no {C:attention}#1#{} in deck",
+                    "{C:inactive,s:0.8}Rank does not change"
+                }
+            },
             j_cry_blender = {
                 name = "Blender",
                 text = {
@@ -644,6 +661,14 @@ return {
                     "{C:inactive,s:0.8}Does not affect other Boredom{}",
                 },
             },
+            j_cry_brittle = {
+                name = "Brittle Candy",
+                text = {
+                    "For the next {C:attention}#1#{} hands,",
+                    "add {C:attention}Stone{}, {C:attention}Gold{}, or {C:attention}Steel{} to",
+                    "the rightmost scoring card"
+                }
+            },
             j_cry_bubblem = {
                 name = "Bubble M",
                 text = {
@@ -661,6 +686,37 @@ return {
                     "{C:green}1 in 4{} chance",
                     "for {C:mult}-#2#{} Mult",
                 },
+            },
+            j_cry_candy_basket = {
+                name = "Candy Basket",
+                text = {
+                    "Sell this card to create {C:attention}#1#{} {C:cry_candy}Candies",
+                    "{C:attention}+#2#{} {C:cry_candy}Candy{} every {C:attention}2{} Blinds defeated",
+                    "{C:attention}+#3#{} {C:cry_candy}Candies{} when {C:attention}Boss Blind{} defeated"
+                }
+            },
+            j_cry_candy_buttons = {
+                name = "Candy Buttons",
+                text = {
+                    "The next {C:attention}#1#{} rerolls",
+                    "cost {C:money}$1{}",
+                }
+            },
+            j_cry_candy_cane = {
+                name = "Candy Cane",
+                text = {
+                    "For the next {C:attention}#1#{} rounds,",
+                    "playing cards give {C:money}$#2#",
+                    "when {C:attention}retriggered"
+                }
+            },
+            j_cry_candy_dagger = {
+                name = "Candy Dagger",
+                text = {
+                    "When {C:attention}Blind{} is selected,",
+                    "destroy Joker to the left",
+                    "to create a {C:cry_candy}Candy{}",
+                }
             },
             j_cry_canvas = {
                 name = "Canvas",
@@ -692,6 +748,15 @@ return {
                     "at end of round,",
                     "{C:red,E:2}self destructs{} after {C:attention}#3#{} rounds",
                     "{C:inactive}(Currently{} {X:mult,C:white} X#1# {} {C:inactive}Mult){}",
+                },
+            },
+            j_cry_chocolate_dice = {
+                name = "Chocolate Die",
+                text = {
+                    "Roll a {C:green}d10{} when",
+                    "{C:attention}Boss Blind{} defeated",
+                    "to start an {C:cry_ascendant,E:1}event",
+                    "{C:inactive}(Currently: #1#)"
                 },
             },
             j_cry_circulus_pistoris = {
@@ -743,6 +808,13 @@ return {
                     "{C:inactive}(Must have room)",
                 },
             },
+            j_cry_cotton_candy = {
+                name = "Cotton Candy",
+                text = {
+                    "When sold, adjacent",
+                    "{C:attention}Jokers{} become {C:dark_edition}Negative{}"
+                },
+            },
             j_cry_crustulum = {
                 name = "Crustulum",
                 text = {
@@ -766,7 +838,7 @@ return {
                     "{C:chips}+#1#{} Chips",
                 },
             },
-            j_cry_curse = {
+            j_cry_curse_sob = {
                 name = "Sob",
                 text = {
                     "{C:edition,E:1}you cannot{} {C:cry_ascendant,E:1}run...{}",
@@ -855,8 +927,10 @@ return {
             j_cry_duplicare = {
                 name = 'Duplicare',
                 text = {
-                    "Every {C:attention}Joker{} gives",
-                    "{X:dark_edition,C:white}^#1#{} Mult"
+                    "This Joker gains {X:mult,C:white} X#2# {} Mult",
+                    "when a {C:attention}Joker{} or",
+                    "playing card is scored",
+                    "{C:inactive}(Currently {X:mult,C:white} X#1# {C:inactive} Mult)",
                 }
             },
             j_cry_effarcire = {
@@ -959,6 +1033,15 @@ return {
                     "{C:inactive,s:0.8}Large Fries, 20 Piece & Large Cake{}",
                 },
             },
+	    j_cry_formidiulosus = {
+		    name = "Formidiulosus",
+		    text = {
+		    	"When a {X:cry_cursed,C:white}Cursed{} Joker is obtained, destroy it",
+			"Creates {C:attention}#1#{} {C:cry_candy}Negative Candy Jokers{} at the end of Shop",
+			"{X:dark_edition,C:white}+^#2#{} Mult for each {C:cry_candy}Candy Joker{} in possession",
+			"{C:inactive}(Currently {X:dark_edition,C:white}^#3#{C:inactive} Mult)",
+		    },
+	    },
             j_cry_foxy = {
                 name = "Foxy Joker",
                 text = {
@@ -990,6 +1073,16 @@ return {
                     "of leftmost {C:attention}Joker",
                     "at end of round",
                 },
+            },
+            j_cry_ghost = {
+                name = "Ghost",
+                text = {
+                    "At end of round:",
+                    "{C:green}#1# in #2#{} chance to",
+                    "{C:attention}possess{} a random {C:attention}Joker",
+                    "{C:green}#1# in #3#{} chance to",
+                    "{E:2,C:red}self destruct"
+                }
             },
             j_cry_giggly = {
                 name = "Absurd Joker",
@@ -1058,6 +1151,14 @@ return {
                     "each played card gives",
                     "{X:mult,C:white} X#1# {} Mult when scored",
                 },
+            },
+            j_cry_jawbreaker = {
+                name = "Jawbreaker",
+                text = {
+                    "When {C:attention}Boss Blind{} defeated,",
+                    "{C:attention}double{} values of all Jokers",
+                    "{E:2,C:red}self destructs{}",
+                }
             },
             j_cry_jimball = {
                 name = "Jimball",
@@ -1229,6 +1330,14 @@ return {
                     "by {C:attention}#1#{} at end of round",
                 },
             },
+            j_cry_mellowcreme = {
+                name = "Mellowcreme",
+                text = {
+                    "Sell this card to {C:attention}multiply",
+                    "the sell value of all",
+                    "{C:attention}consumables{} by {C:attention}X#1#"
+                }
+            },
             j_cry_membershipcard = {
                 name = "Membership Card",
                 text = {
@@ -1282,6 +1391,14 @@ return {
                     "its sell value to this {C:chips}Chips{}",
                     "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
                 },
+            },
+            j_cry_monopoly_money = {
+                name = "Monopoly Money",
+                text = {
+                    "{C:green}#1# in #2#{} chance to",
+                    "{C:attention}destroy{} purchased items",
+                    "Halves money when {C:attention}sold",
+                }
             },
             j_cry_morse = {
                 name = "Morse Code",
@@ -1629,6 +1746,13 @@ return {
                     "{C:inactive,s:0.8}Does not copy other Speculo{}",
                 },
             },
+            j_cry_spy = {
+                name = "Spy",
+                text = {
+                    "{X:mult,C:white} X#2# {} Mult, {C:dark_edition}+1{C:attention} Joker{} slot",
+                    "{C:inactive}That #1# is a spy!",
+                },
+            },
             j_cry_stardust = {
                 name = "Stardust",
                 text = {
@@ -1702,6 +1826,15 @@ return {
                     "of a random {C:attention}Joker{}",
                     "{s:0.8,C:inactive}(Copy bypasses perish compat)",
                 },
+            },
+            j_cry_trick_or_treat = {
+                name = "Trick-or-Treat",
+                text = {
+                    "When {C:attention}sold{}:",
+                    "{C:green}#1# in #2#{} chance to create {C:attention}2{} {C:cry_candy}Candies",
+                    "Otherwise, create a {X:cry_cursed,C:white}Cursed{} Joker",
+                    "{C:inactive}(Can overflow)"
+                }
             },
             j_cry_tricksy = {
                 name = "Tricksy Joker",
@@ -1820,6 +1953,14 @@ return {
                     "if {C:attention}played hand{} contains a",
                     "{C:attention}2{} and {C:attention}7{} of different suits",
                     "{C:inactive}(Currently {X:mult,C:white} X#2# {C:inactive} Mult)",
+                },
+            },
+            j_cry_wrapped = {
+                name = "Wrapped Candy",
+                text = {
+                    "Create a random {C:attention}Food Joker{}",
+                    "in {C:attention}#1#{} round(s)",
+                    "{C:red,E:2}self destructs{}",
                 },
             },
         },
@@ -1957,6 +2098,14 @@ return {
                     "Jokers are {C:attention}20X{} more",
                     "likely to be {C:dark_edition}Negative",
                     "{C:attention}-2{} Joker slots",
+                },
+            },
+			sleeve_cry_legendary_sleeve = {
+                name = "Legendary Sleeve",
+                text = {
+                    "Start with an {C:legendary}Legendary{C:legendary} Joker",
+                    "{C:green}1 in 5{} chance to create another",
+					"when Boss Blind is defeated {C:inactive}(must have room){}",
                 },
             },
         },
@@ -2728,6 +2877,30 @@ return {
                     "trigger {C:cry_code}#1#",
                 },
             },
+            cry_flickering = {
+                name = "Flickering",
+                text = {
+                    "Destroyed after",
+                    "{C:attention}#1#{} triggers",
+                    "{C:inactive}({C:attention}#2#{C:inactive} remaining)"
+                },
+            },
+            cry_flickering_desc = { --used by choco dice
+                name = "Flickering",
+                text = {
+                    "Destroyed after",
+                    "{C:attention}#1#{} triggers",
+                },
+            },
+            cry_possessed = {
+                name = "Possessed",
+                text = {
+                    "{C:attention}Disables{} and {C:attention}reverses{}",
+                    "effects, if possible",
+                    "Destroyed along with {C:attention}Ghost"
+                },
+            },
+            --todo? add candy jokers to list
             food_jokers = {
                 name = "Food Jokers",
                 text = {
@@ -2736,6 +2909,114 @@ return {
                     "{s:0.8}Seltzer, Pickle, Chili Pepper, Caramel,",
                     "{s:0.8}Nostalgic Candy, Fast Food M, etc.",
                 },
+            },
+            ev_cry_choco0 = {
+                name = "",
+                text = {
+                    "Details of an active",
+                    "{C:cry_ascendant,E:1}event{} will appear here"
+                }
+            },
+            ev_cry_choco1 = {
+                name = "1: Possession",
+                text = {
+                    "{C:attention}Jokers{} and playing cards have a",
+                    "{C:green}1 in 3{} chance of gaining Flickering",
+                    "Create a {C:attention}Ghost",
+                    "{C:inactive,s:0.7}You've been possessed by a ghost, and your",
+                    "{C:inactive,s:0.7}consciousness is flickering in and out."
+                }
+            },
+            ev_cry_choco2 = {
+                name = "2: Haunted House",
+                text = {
+                    "Skipping a {C:attention}Blind{} does nothing",
+                    "One {C:attention}reroll{} allowed per shop",
+                    "{C:attention}Voucher{} prices are doubled",
+                    "{C:inactive,s:0.7}Spooky spirits have taken over! Don't touch",
+                    "{C:inactive,s:0.7}anything and get out as soon as possible!",
+                }
+            },
+            ev_cry_choco3 = {
+                name = "3: Witch's Brews",
+                text = {
+                    "Create 3 {C:attention}Potions",
+                    "Use one by the end of the {C:attention}Small Blind{},",
+                    "or {C:attention}all{} maluses will be applied this {C:attention}Ante",
+                    "{C:inactive,s:0.7}You have been kidnapped by a witch!",
+                    "{C:inactive,s:0.7}She offers you three potions, watching you closely.",
+                    "{C:inactive,s:0.7}Pick one, lest she makes the decision for you.",
+                }
+            },
+            ev_cry_choco4 = {
+                name = "4: Lunar Abyss",
+                text = {
+                    "Played cards have a {C:green}1 in 4{} chance",
+                    "to turn into a random {C:club}Club{} face card",
+                    "Divide {C:attention}Mult{} by number of played face cards",
+                    "{C:inactive,s:0.7}Even a man who's pure at heart",
+                    "{C:inactive,s:0.7}and says his prayers by night..."
+                }
+            },
+            ev_cry_choco5 = {
+                name = "5: Bloodsucker",
+                text = {
+                    "Remove {C:attention}Enhancements{} from all played cards",
+                    "{C:green}1 in 3{} chance to destroy",
+                    "{C:heart}Heart{} and {C:diamond}Diamond{} cards",
+                    "{C:inactive,s:0.7}Be wary in the dead of night, for",
+                    "{C:inactive,s:0.7,E:1}they in the shadows{C:inactive,s:0.7} seek to quench their thirst..."
+                }
+            },
+            ev_cry_choco6 = {
+                name = "6: Please Take One",
+                text = {
+                    "At {C:attention}end of round{}, open a",
+                    "random {C:attention}Booster{} Pack",
+                    "{C:inactive,s:0.7}As you stroll down the streets, you spot a",
+                    "{C:inactive,s:0.7}box of various Booster Packs. Might as well grab one!"
+                }
+            },
+            ev_cry_choco7 = {
+                name = "7: Festive Atmosphere",
+                text = {
+                    "Create 3 {C:attention}Trick-or-Treat{} and 1 {C:attention}Candy Basket",
+                    "Shops have a {C:attention}Trick-or-Treat{} each round",
+                    "{C:cry_candy}Candies{} give {C:money}$3{} when obtained",
+                    "{C:inactive,s:0.7}The entire neighbourhood is decorated for spooky endeavours,",
+                    "{C:inactive,s:0.7}come indulge in the festive atmosphere!"
+                }
+            },
+            ev_cry_choco8 = {
+                name = "8: Candy Rain",
+                text = {
+                    "When {C:attention}Blind{} defeated, obtain 1 {C:cry_candy}Candy{}",
+                    "per hand remaining; Obtain a {C:attention}Food Joker{}",
+                    "when a {C:cry_candy}Candy{} is generated",
+                    "{C:inactive,s:0.7}Candies rain from the sky! Quick,",
+                    "{C:inactive,s:0.7,E:1}grab as much as you can!"
+                }
+            },
+            ev_cry_choco9 = {
+                name = "9: Ghostly Riches",
+                text = {
+                    "Gain {C:money}$20",
+                    "All {C:money}money{} earned is {C:attention}doubled",
+                    "{C:inactive,s:0.7}The spectre of a long-gone relative of yours",
+                    "{C:inactive,s:0.7}visits you in the middle of the night!",
+                    "{C:inactive,s:0.7}Without a word, they place a bag of money in your hands,",
+                    "{C:inactive,s:0.7}smile warmly, and wave as they fade into the air.",
+                }
+            },
+            ev_cry_choco10 = {
+                name = "10: Revered Antique",
+                text = {
+                    "A {C:legendary}Legendary{} {C:attention}Joker{} appears",
+                    "in the {C:attention}Voucher{} slot for {C:money}$50",
+                    "Only buyable as {C:attention}last{} item in shop",
+                    "{C:inactive,s:0.7}You've attracted the attention of a relic's spirit,",
+                    "{C:inactive,s:0.7}but it won't be easy to quell.",
+                }
             },
             cry_https_disabled = {
                 name = "M",
@@ -2909,6 +3190,15 @@ return {
                     "learn what it does"
                 }
             },
+            undiscovered_unique = {
+                name = "Not Discovered",
+                text = {
+                    "Purchase or use",
+                    "this card in an",
+                    "unseeded run to",
+                    "learn what it does"
+                }
+            },
             cry_green_seal = {
                 name = "Green Seal",
                 text = {
@@ -2927,6 +3217,16 @@ return {
                 },
             },
         },
+        Unique = {
+            c_cry_potion = {
+                name = "Potion",
+                text = {
+                    "Applies an unknown",
+                    "{C:attention}malus{} when used",
+                    "{C:inactive,s:0.7}Obtained from Chocolate Die"
+                }
+            }
+        }
     },
     misc = {
         achievement_names = {
@@ -3011,6 +3311,7 @@ return {
             cry_feat_tags = "Tags",
             cry_feat_sleeves = "Sleeves",
             cry_feat_spectrals = "Spectrals",
+            cry_feat_spooky = "Spooky Update",
             ["cry_feat_more stakes"] = "Stakes",
             cry_feat_vouchers = "Vouchers",
             cry_mus_jimball = "Jimball (Funkytown by Lipps Inc. - Copyrighted)",
@@ -3024,6 +3325,10 @@ return {
             cry_critical_hit_ex = "Critical Hit!",
             cry_critical_miss_ex = "Critical Miss!",
 
+            cry_potion1 = "-1 to all Hand Levels",
+            cry_potion2 = "X1.15 Blind size",
+            cry_potion3 = "-1 Hand and Discard",
+
             cry_debuff_oldhouse = "No Full Houses",
             cry_debuff_oldarm = "Must play 4 or fewer cards",
             cry_debuff_oldpillar = "No Straights",
@@ -3032,7 +3337,9 @@ return {
             cry_debuff_obsidian_orb = "Applies abilities of all defeated bosses",
 
             k_code = "Code",
+            k_unique = "Unique",
             b_code_cards = "Code Cards",
+            b_unique_cards = "Unique Cards",
             b_pull = "PULL",
             cry_hooked_ex = "Hooked!",
             k_end_blind = "End Blind",
@@ -3073,8 +3380,10 @@ return {
 
             k_disable_music = "Disable Music",
 
-            cry_epic = "Epic",
-            cry_exotic = "Exotic",
+            k_cry_epic = "Epic",
+            k_cry_exotic = "Exotic",
+            k_cry_candy = "Candy",
+            k_cry_cursed  = "Cursed",
 
             cry_notif_jimball_1 = "Jimball",
             cry_notif_jimball_2 = "Copyright Notice",
@@ -3086,8 +3395,11 @@ return {
             food_jokers = "Food Jokers",
             banana = "Banana",
             code = "Code",
+            unique = "Unique",
             cry_rigged = "Rigged",
             cry_hooked = "Hooked",
+            cry_flickering = "Flickering",
+            cry_possessed = "Possessed",
 
             cry_green_seal = "Green Seal",
             cry_azure_seal = "Azure Seal",
@@ -3103,8 +3415,10 @@ return {
             cry_noisy = "Noisy",
             cry_oversat = "Oversaturated",
 
-            cry_epic = "Epic",
-            cry_exotic = "Exotic"
+            k_cry_epic = "Epic",
+            k_cry_exotic = "Exotic",
+            k_cry_candy = "Candy",
+            k_cry_cursed  = "Cursed",
         },
         rnj_loc_txts = {
             stats = {
@@ -3193,6 +3507,7 @@ return {
             a_powchips = {"^#1# Chips"},
             a_powmultchips = {"^#1# Mult+Chips"},
             a_round = {"+#1# Round"},
+            a_candy = {"+#1# Candy"},
             a_xchips_minus = {"-X#1# Chips"},
             a_powmult_minus = {"-^#1# Mult"},
             a_powchips_minus = {"-^#1# Chips"},

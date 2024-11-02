@@ -79,6 +79,7 @@ local happyhouse = {
 	order = 2,
 	config = { extra = { mult = 2, check = 0 } },
 	immune_to_chemach = true,
+    pools = {["Meme"] = true},
 	rarity = 2,
 	cost = 2,
 	blueprint_compat = true,
@@ -495,6 +496,7 @@ local cube = {
 	cost = -15,
 	blueprint_compat = true,
 	atlas = "atlasone",
+    pools = {["Meme"] = true},
 	source_gate = "sho",
 	loc_vars = function(self, info_queue, center)
 		return { vars = { center.ability.extra.chips } }
@@ -735,6 +737,7 @@ local nice = {
 	key = "nice",
 	config = { extra = { chips = 200, sixcount = 0, ninecount = 0 } },
 	pos = { x = 2, y = 3 },
+    pools = {["Meme"] = true},
 	rarity = 3,
 	cost = 7,
 	order = 84,
@@ -809,6 +812,7 @@ local chad = {
 	order = 71,
 	config = { extra = { retriggers = 2 } },
 	immune_to_chemach = true,
+    pools = {["Meme"] = true},
 	rarity = 3,
 	cost = 10,
 	blueprint_compat = true,
@@ -837,6 +841,7 @@ local jimball = {
 	pos = { x = 0, y = 0 },
 	order = 8,
 	config = { x_mult = 1, extra = 0.1, override_x_mult_check = true },
+    pools = {["Meme"] = true},
 	loc_vars = function(self, info_queue, center)
 		return { vars = { center.ability.extra, center.ability.x_mult } }
 	end,
@@ -892,6 +897,7 @@ local sus = {
 	name = "cry-SUS",
 	key = "sus",
 	pos = { x = 1, y = 3 },
+    pools = {["Meme"] = true},
 	rarity = 3,
 	cost = 7,
 	order = 79,
@@ -1155,6 +1161,7 @@ local krustytheclown = {
 	key = "krustytheclown",
 	pos = { x = 3, y = 4 },
 	config = { extra = { extra = 0.02, x_mult = 1 } },
+    pools = {["Meme"] = true},
 	rarity = 2,
 	order = 31,
 	cost = 7,
@@ -1191,6 +1198,7 @@ local blurred = {
 	name = "cry-blurred Joker",
 	key = "blurred",
 	pos = { x = 4, y = 4 },
+  pools = {["Meme"] = true},
 	config = { extra = 1 },
 	rarity = 1,
 	cost = 4,
@@ -1892,7 +1900,7 @@ local sapling = {
 		then
 			if card.ability.extra.score >= card.ability.extra.req then
 				card_eval_status_text(card, 'extra', nil, nil, nil, {message = localize('k_plus_joker'), colour = G.C.RARITY["cry_epic"]})
-				local card = create_card("Joker", G.jokers, nil, 1, nil, nil, nil, "cry_sapling")
+				local card = create_card("Joker", G.jokers, nil, cry_enable_epics and 'cry_epic' or 1, nil, nil, nil, "cry_sapling")
 				card:add_to_deck()
 				G.jokers:emplace(card)
 				card:start_materialize()
@@ -3694,6 +3702,7 @@ local filler = {
 	name = "cry-filler",
 	key = "filler",
 	pos = { x = 0, y = 1 },
+  pools = {["Meme"] = true},
 	config = { Xmult = 1.5, type = "High Card" },
 	loc_vars = function(self, info_queue, card)
 		return { vars = { card.ability.x_mult, localize(card.ability.type, "poker_hands") } }
@@ -4784,13 +4793,14 @@ local kidnap = {
 	end,
 }
 --this has to be the most spaghetti code in cryptid
-local curse = {
+local curse_sob = {
 	object_type = "Joker",
-	name = "cry_curse",
-	key = "curse",
+	name = "cry_curse_sob",
+	key = "curse_sob",
 	pos = { x = 1, y = 1 },
-	rarity = 4,
-	cost = 20,
+    pools = {["Meme"] = true},
+	rarity = "cry_epic",
+	cost = 9,
 	order = 82,
 	perishable_compat = true,
 	atlas = "atlasepic",
@@ -5016,18 +5026,20 @@ local curse = {
 		end
 	end,
 	add_to_deck = function(self, card, from_debuff)
-		local card = create_card("Joker", G.jokers, nil, nil, nil, nil, "j_obelisk")
-		card:set_edition("e_negative", true, nil, true)
-		card.sob = true
-		card:set_eternal(true)
-		card:add_to_deck()
-		G.jokers:emplace(card)
-		return {
-			card_eval_status_text(card, "extra", nil, nil, nil, {
-				message = localize("cry_curse_ex"),
-				colour = G.C.DARK_EDITION,
-			}),
-		}
+		if not from_debuff then
+			local card = create_card("Joker", G.jokers, nil, nil, nil, nil, "j_obelisk")
+			card:set_edition("e_negative", true, nil, true)
+			card.sob = true
+			card:set_eternal(true)
+			card:add_to_deck()
+			G.jokers:emplace(card)
+			return {
+				card_eval_status_text(card, "extra", nil, nil, nil, {
+					message = localize("cry_curse_ex"),
+					colour = G.C.DARK_EDITION,
+				}),
+			}
+		end
 	end,
 }
 local sync_catalyst = {
