@@ -144,7 +144,7 @@ local mosaic = {
 	shader = "mosaic",
 	in_shop = true,
 	extra_cost = 6,
-	config = { x_chips = 2.5 },
+	config = { x_chips = 1.5 },
 	sound = {
 		sound = "cry_e_mosaic",
 		per = 1,
@@ -277,14 +277,14 @@ local glitched = {
 			cry_misprintize(card, nil, true)
 			cry_misprintize(card, {
 				min = 0.1 * (G.GAME.modifiers.cry_misprint_min or 1),
-				max = 10 * (G.GAME.modifiers.cry_misprint_max or 1),
+				max = 3 * (G.GAME.modifiers.cry_misprint_max or 1),
 			})
 		end)
 		if card.config.center.apply_glitched then
 			card.config.center:apply_glitched(card, function(val)
 				return cry_misprintize_val(val, {
 					min = 0.1 * (G.GAME.modifiers.cry_misprint_min or 1),
-					max = 10 * (G.GAME.modifiers.cry_misprint_max or 1),
+					max = 3 * (G.GAME.modifiers.cry_misprint_max or 1),
 				})
 			end)
 		end
@@ -539,7 +539,7 @@ local noisy = {
 	shader = "noisy",
 	in_shop = true,
 	extra_cost = 4,
-	config = { min_mult = 0, max_mult = 30, min_chips = 0, max_chips = 150 },
+	config = { min_mult = 0, max_mult = 6, min_chips = 0, max_chips = 30 },
 	sound = {
 		sound = "cry_e_noisy",
 		per = 1,
@@ -740,7 +740,7 @@ local glass_edition = {
 	},
 	weight = 7,
 	extra_cost = 2,
-	config = { x_mult = 3, shatter_chance = 8 },
+	config = { x_mult = 2, shatter_chance = 8 },
 	loc_vars = function(self, info_queue)
 		return {
 			vars = {
@@ -796,7 +796,7 @@ local gold_edition = {
 	weight = 7,
 	extra_cost = 2,
 	in_shop = true,
-	config = { dollars = 2 },
+	config = { dollars = 1 },
 	loc_vars = function(self, info_queue)
 		return { vars = { self.config.dollars } }
 	end,
