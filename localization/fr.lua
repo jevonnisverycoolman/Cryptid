@@ -616,7 +616,8 @@ return {
                 name = "Carte Googol Play Nostalgique",
                 text = {
                     "Vendre cette carte crée",
-                    "{C:attention}2{} copies du {C:attention}Joker{} le plus à gauche",
+                    "{C:attention}1{} copies du {C:attention}Joker{} le plus à gauche",
+                    "{C:inactive}(Selon la place disponible){}",
                     "{C:inactive,s:0.8}Ne copie pas les Carte Googol Play Nostalgiques{}",
                 },
             },
@@ -878,9 +879,7 @@ return {
                 name = "Cumul d'intérêts",
                 text = {
                     "Gagne {C:money}#1#%{} de votre argent total",
-                    "à la fin de la manche,",
-                    "augmente de {C:money}#2#%{} après",
-                    "chaque paiement",
+                    "à la fin de la manche",
                 },
             },
             j_cry_copypaste = {
@@ -1468,6 +1467,12 @@ return {
             },
             j_cry_membershipcardtwo = {
                 name = "Vieille carte de membre", --Could probably have a diff Name imo
+                --[[    outdated, new description:
+                "{C:chips}+#1#{} Chips for every 3 members",
+                    "in the {C:attention}Cryptid Discord{}",
+                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
+                    "{C:blue,s:0.7}https://discord.gg/eUf9Ur6RyB{}",
+                ]]
                 text = {
                     "{C:chips}+#1#{} Jetons pour chaque membre",
                     "dans le {C:attention}serveur Discord{} de {C:attention}Cryptid{}",
@@ -1506,7 +1511,7 @@ return {
                 text = {
                     "Lorsque la {C:attention}Blinde{} est sélectionnée,",
                     "détruit le Joker situé à sa gauche",
-                    "et augmente ces {C:mult}Jetons{} de {C:attention}dix fois{}",
+                    "et augmente ces {C:mult}Jetons{} de {C:attention}six fois{}",
                     "la valeur de vente du Joker détruit",
                     "{C:inactive}(Actuellement {C:chips}+#1#{C:inactive} Jetons)",
                 },
@@ -1865,7 +1870,6 @@ return {
             j_cry_soccer = {
                 name = "One for All", --changed the name from latin because this isn't exotic
                 text = {
-                    "{C:attention}+#1#{} Joker max",
                     "{C:attention}+#1#{} Paquet Booster max",
                     "{C:attention}+#1#{} taille de main",
                     "{C:attention}+#1#{} emplacement de consommable",
@@ -1935,7 +1939,6 @@ return {
             j_cry_supercell = {
                 name = "Supercell",
                 text = {
-                    "{C:chips}+#1#{} Jetons, {C:mult}+#1#{} Multi,",
                     "{X:chips,C:white}X#2#{} Jetons, {X:mult,C:white}X#2#{} Multi",
                     "Gagne {C:money}$#3#{} à",
                     "la fin de la manche",
@@ -2431,7 +2434,7 @@ return {
                 text = {
                     "{C:attention}Enlève{} toues les niveaux de toutes les mains,",
                     "améliore la main de poker {C:legendary,E:1}la plus jouée{}",
-                    "de {C:attention}3{} pour chaque niveau enlevé",
+                    "de {C:attention}1{} pour chaque niveau enlevé",
                 },
             },
         },
