@@ -24,13 +24,6 @@ return {
                     "{C:inactive,E:1}Tut nichts?",
                 },
             },
-			b_cry_bountiful = {
-				name = "Größzügiges Deck",
-				text = {
-					"Ziehe immer 5 Karten nach",
-					"{C:attention}Gespielter Hand{} oder {C:attention}Abwurf{}",
-				},
-			},
             b_cry_CCD = {
                 name = "CCD Deck",
                 text = {
@@ -592,7 +585,8 @@ return {
                 name = "Nostalgische Googol Play Karte",
                 text = {
                     "Verkaufe diese Karte um",
-                    "{C:attention}2{} Kopien von dem linkesten {C:attention}Joker{} zu machen",
+                    "{C:attention}1{} Kopien von dem linkesten {C:attention}Joker{} zu machen",
+                    "{C:inactive}(Muss Platz haben){}",
                     "{C:inactive,s:0.8}Kopiert keine Nostalgischen Googol Play Karten{}",
                 },
             },
@@ -844,9 +838,7 @@ return {
                 name = "Zinseszins",
                 text = {
                     "Bekomme {C:money}#1#%{} deines gesammten Geldes",
-                    "am ende der Runde,",
-                    "erhöht sich um {C:money}#2#%{} für jede",
-                    "aufeinenderfolgende Auszahlung",
+                    "am ende der Runde",
                 },
             },
             j_cry_copypaste = {
@@ -1415,6 +1407,12 @@ return {
             },
             j_cry_membershipcardtwo = {
                 name = "Alte Mitgliedskarte", --Could probably have a diff Name imo
+                --[[    outdated, new description:
+                "{C:chips}+#1#{} Chips for every 3 members",
+                    "in the {C:attention}Cryptid Discord{}",
+                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
+                    "{C:blue,s:0.7}https://discord.gg/eUf9Ur6RyB{}",
+                ]]
                 text = {
                     "{C:chips}+#1#{} Chips für jedes Mitglied",
                     "im {C:attention}Cryptid Discord{}",
@@ -1453,7 +1451,7 @@ return {
                 text = {
                     "Wenn {C:attention}Blind{} ausgewählt wird,",
                     "wird der linke Joker zerstört",
-                    "und {C:attention}10 mal{} der Verkaufswert",
+                    "und {C:attention}6 mal{} der Verkaufswert",
                     "zu den {C:chips}Chips{} hinzugefügt",
                     "{C:inactive}(Momentan {C:chips}+#1#{C:inactive} Chips)",
                 },
@@ -1811,7 +1809,6 @@ return {
             j_cry_soccer = {
                 name = "Einer für Alle", --changed the name from latin because this isn't exotic
                 text = {
-                    "{C:attention}+#1#{} Joker Slot",
                     "{C:attention}+#1#{} Booster Packer Slot",
                     "{C:attention}+#1#{} Handgröße",
                     "{C:attention}+#1#{} Verbrauchsgegenstand Slot",
@@ -1879,7 +1876,6 @@ return {
             j_cry_supercell = {
                 name = "Supercell",
                 text = {
-                    "{C:chips}+#1#{} Chips, {C:mult}+#1#{} Mult,",
                     "{X:chips,C:white}X#2#{} Chips, {X:mult,C:white}X#2#{} Mult",
                     "Verdiene {C:money}$#3#{} am",
                     "Ende der Runde",
@@ -1910,13 +1906,6 @@ return {
                     "{C:inactive,s:0.8}Hey! Das habe ich schonmal gesehen!",
                 },
             },
-			j_cry_tax_fraud = {
-				name = "Steuerbetrug",
-				text = {
-					"Am Ende der Runde",
-					"Erhalte {C:attention}$#1#{} für jeden {C:attention}Gemieteten Joker",
-				},
-			},
             j_cry_tenebris = {
                 name = "Tenebris",
                 text = {
@@ -2338,7 +2327,7 @@ return {
                 text = {
                     "{C:attention}Entferne{} alle Handlevel,",
                     "verbessere {C:legendary,E:1}meistgespielte{} Pokerhand",
-                    "um {C:attention}3{} für jedes entfernte Level",
+                    "um {C:attention}1{} für jedes entfernte Level",
                 },
             },
         },
@@ -2777,7 +2766,7 @@ return {
             v_cry_asteroglyph = {
                 name = "Astroglyphe",
                 text = {
-                    "Setzt Ante zu {C:attention}#1#{}",
+                    "{C:attention}-#1#{} Ante",
                 },
             },
             v_cry_blankcanvas = {
@@ -2882,9 +2871,6 @@ return {
             v_cry_pacclimator = {
                 name = "Planetenakklimatisierung",
                 text = {
-                    "{C:planet}Planet{} Karten erscheinen",
-                    "{C:attention}X#1#{} öfter",
-                    "im Shop.",
                     "Alle zukünftigen {C:planet}Planeten{}",
                     "Karten sind {C:green}kostenlos{}",
                 },
@@ -2946,9 +2932,6 @@ return {
             v_cry_tacclimator = {
                 name = "Tarotakklimatisierung",
                 text = {
-                    "{C:tarot}Tarot{} Karten erscheinen",
-                    "{C:attention}X#1#{} öfter",
-                    "im Shop.",
                     "Alle zukünftigen {C:tarot}Tarot{}",
                     "Karten sind {C:green}kostenlos{}",
                 },

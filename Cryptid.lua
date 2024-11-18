@@ -6,7 +6,7 @@
 --- MOD_DESCRIPTION: Adds unbalanced ideas to Balatro.
 --- BADGE_COLOUR: 708b91
 --- DEPENDENCIES: [Talisman>=2.0.0-beta8, Steamodded>=1.0.0~ALPHA-1103a]
---- VERSION: 0.5.2~1115a
+--- VERSION: 0.5.2~1114a
 --- PRIORITY: 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
 
 ----------------------------------------------
@@ -183,16 +183,14 @@ function loc_colour(_c, _default)
 	if not G.ARGS.LOC_COLOURS then
 		lc()
 	end
+	G.ARGS.LOC_COLOURS.cry_azure = HEX("1d4fd7")
 	G.ARGS.LOC_COLOURS.cry_code = G.C.SET.Code
 	G.ARGS.LOC_COLOURS.heart = G.C.SUITS.Hearts
 	G.ARGS.LOC_COLOURS.diamond = G.C.SUITS.Diamonds
 	G.ARGS.LOC_COLOURS.spade = G.C.SUITS.Spades
 	G.ARGS.LOC_COLOURS.club = G.C.SUITS.Clubs
-	for k, v in pairs(G.C) do
-		if string.len(k) > 4 and string.sub(k, 1, 4) == 'CRY_' then
-			G.ARGS.LOC_COLOURS[string.lower(k)] = v
-		end
-	end
+	G.ARGS.LOC_COLOURS.cry_ascendant = G.C.CRY_ASCENDANT
+	G.ARGS.LOC_COLOURS.cry_jolly = G.C.CRY_JOLLY
 	return lc(_c, _default)
 end
 
@@ -429,7 +427,7 @@ function cry_voucher_pinned(name)
 end
 
 -- gets a random, valid consumeable (used for Hammerspace, CCD Deck, Blessing, etc.)
-function get_random_consumable(seed, excluded_flags, unbalanced, pool)
+function get_random_consumable(seed, excluded_flags, unbalanced)
     -- set up excluded flags - these are the kinds of consumables we DON'T want to have generating
 	excluded_flags = excluded_flags or unbalanced and { "no_doe", "no_grc" } or { "hidden", "no_doe", "no_grc" }
 	local selection = "n/a"
@@ -439,7 +437,7 @@ function get_random_consumable(seed, excluded_flags, unbalanced, pool)
 		tries = tries - 1
 		passes = 0
         -- create a random consumable naively
-		local key = pseudorandom_element(pool or G.P_CENTER_POOLS.Consumeables, pseudoseed(seed or "grc")).key
+		local key = pseudorandom_element(G.P_CENTER_POOLS.Consumeables, pseudoseed(seed or "grc")).key
 		selection = G.P_CENTERS[key]
         -- check if it is valid
 		for k, v in pairs(excluded_flags) do
@@ -2871,10 +2869,6 @@ local jokers = {
 if Cryptid.enabled["Misc. Jokers"] then
 	jokers[#jokers + 1] = "j_cry_pickle"
 	jokers[#jokers + 1] = "j_cry_chili_pepper"
-end
-if Cryptid.enabled["Epic Jokers"] then
-	jokers[#jokers + 1] = "j_cry_oldcandy"
-	jokers[#jokers + 1] = "j_cry_caramel"
 end
 if Cryptid.enabled["M Jokers"] then
 	jokers[#jokers + 1] = "j_cry_foodm"
