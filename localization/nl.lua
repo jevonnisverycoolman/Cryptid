@@ -734,8 +734,6 @@ return {
                 text = {
                     "Earn {C:money}#1#%{} of total money",
                     "at end of round,",
-                    "increases by {C:money}#2#%{} per",
-                    "consecutive payout",
                 },
             },
             j_cry_copypaste = {
@@ -1243,6 +1241,12 @@ return {
             },
             j_cry_membershipcardtwo = {
                 name = "Old Membership Card", --Could probably have a diff Name imo
+                --[[    outdated, new description:
+                "{C:chips}+#1#{} Chips for every 3 members",
+                    "in the {C:attention}Cryptid Discord{}",
+                    "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
+                    "{C:blue,s:0.7}https://discord.gg/eUf9Ur6RyB{}",
+                ]]
                 text = {
                     "{C:chips}+#1#{} Chips for each member",
                     "in the {C:attention}Cryptid Discord{}",
@@ -1281,7 +1285,7 @@ return {
                 text = {
                     "When {C:attention}Blind{} is selected,",
                     "destroy Joker to the left",
-                    "and permanently add {C:attention}ten times{}",
+                    "and permanently add {C:attention}six times{}",
                     "its sell value to this {C:chips}Chips{}",
                     "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
                 },
@@ -2062,7 +2066,7 @@ return {
                 text = {
                     "{C:attention}Remove{} all hand levels,",
                     "upgrade {C:legendary,E:1}most played{} poker hand",
-                    "by {C:attention}3{} for each removed level",
+                    "by {C:attention}1{} for each removed level",
                 },
             },
         },

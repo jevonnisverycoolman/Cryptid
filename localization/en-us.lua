@@ -531,7 +531,7 @@ return {
                 text = {
                     "All values on this card",
                     "are {C:dark_edition}randomized{}",
-                    "between {C:attention}X0.1{} and {C:attention}X10{}",
+                    "between {C:attention}X0.1{} and {C:attention}X3{}",
                     "{C:inactive}(If possible){}",
                 },
             },
@@ -596,7 +596,8 @@ return {
                 name = "Nostalgic Googol Play Card",
                 text = {
                     "Sell this card to create",
-                    "{C:attention}2{} copies of the leftmost {C:attention}Joker{}",
+                    "{C:attention}1{} copy of the leftmost {C:attention}Joker{}",
+                    "{C:inactive}(Must have room){}",
                     "{C:inactive,s:0.8}Does not copy Nostalgic Googol Play Cards{}",
                 },
             },
@@ -856,9 +857,7 @@ return {
                 name = "Compound Interest",
                 text = {
                     "Earn {C:money}#1#%{} of total money",
-                    "at end of round,",
-                    "increases by {C:money}#2#%{} per",
-                    "consecutive payout",
+                    "at end of round",
                 },
             },
             j_cry_copypaste = {
@@ -1444,7 +1443,7 @@ return {
             j_cry_membershipcardtwo = {
                 name = "Old Membership Card", --Could probably have a diff Name imo
                 text = {
-                    "{C:chips}+#1#{} Chips for each member",
+                    "{C:chips}+#1#{} Chips for every 3 members",
                     "in the {C:attention}Cryptid Discord{}",
                     "{C:inactive}(Currently {C:chips}+#2#{C:inactive} Chips)",
                     "{C:blue,s:0.7}https://discord.gg/eUf9Ur6RyB{}",
@@ -1481,7 +1480,7 @@ return {
                 text = {
                     "When {C:attention}Blind{} is selected,",
                     "destroy Joker to the left",
-                    "and permanently add {C:attention}ten times{}",
+                    "and permanently add {C:attention}six times{}",
                     "its sell value to this {C:chips}Chips{}",
                     "{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
                 },
@@ -1839,7 +1838,6 @@ return {
             j_cry_soccer = {
                 name = "One for All", --changed the name from latin because this isn't exotic
                 text = {
-                    "{C:attention}+#1#{} Joker slot",
                     "{C:attention}+#1#{} Booster Pack slot",
                     "{C:attention}+#1#{} hand size",
                     "{C:attention}+#1#{} consumable slot",
@@ -1907,7 +1905,6 @@ return {
             j_cry_supercell = {
                 name = "Supercell",
                 text = {
-                    "{C:chips}+#1#{} Chips, {C:mult}+#1#{} Mult,",
                     "{X:chips,C:white}X#2#{} Chips, {X:mult,C:white}X#2#{} Mult",
                     "Earn {C:money}$#3#{} at",
                     "end of round",
@@ -2412,7 +2409,7 @@ return {
                 text = {
                     "{C:attention}Remove{} all hand levels,",
                     "upgrade {C:legendary,E:1}most played{} poker hand",
-                    "by {C:attention}3{} for each removed level",
+                    "by {C:attention}1{} for each removed level",
                 },
             },
         },
@@ -2851,7 +2848,7 @@ return {
             v_cry_asteroglyph = {
                 name = "Asteroglyph",
                 text = {
-                    "Set Ante to {C:attention}#1#{}",
+                    "{C:attention}-#1#{} Ante",
                 },
             },
             v_cry_blankcanvas = {
@@ -2933,8 +2930,8 @@ return {
             v_cry_massproduct = {
                 name = "Mass Production",
                 text = {
-                    "All cards and packs",
-                    "in shop cost {C:attention}$1{}",
+                    "All cards and packs in",
+                    "shop are {C:attention}75%{} off",
                 },
             },
             v_cry_moneybean = {
@@ -2956,9 +2953,6 @@ return {
             v_cry_pacclimator = {
                 name = "Planet Acclimator",
                 text = {
-                    "{C:planet}Planet{} cards appear",
-                    "{C:attention}X#1#{} more frequently",
-                    "in the shop",
                     "All future {C:planet}Planet{}",
                     "cards are {C:green}free{}",
                 },
@@ -3019,9 +3013,6 @@ return {
             v_cry_tacclimator = {
                 name = "Tarot Acclimator",
                 text = {
-                    "{C:tarot}Tarot{} cards appear",
-                    "{C:attention}X#1#{} more frequently",
-                    "in the shop",
                     "All future {C:tarot}Tarot{}",
                     "cards are {C:green}free{}",
                 },
